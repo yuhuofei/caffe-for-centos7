@@ -3,6 +3,8 @@
 this project can be cmake on cnetos 7 by using either atlas or mkl
 
 first,  install mkl in /usr/local/, or yum install atlas, maybe you need to install epel repo first
+
+
 second, to test mkl on centos 7
 ```shel
 # in caffe root dir
