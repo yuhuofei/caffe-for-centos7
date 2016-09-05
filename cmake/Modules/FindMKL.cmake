@@ -19,13 +19,15 @@ caffe_option(MKL_USE_STATIC_LIBS "Use static libraries" OFF IF NOT MKL_USE_SINGL
 caffe_option(MKL_MULTI_THREADED  "Use multi-threading"   ON IF NOT MKL_USE_SINGLE_DYNAMIC_LIBRARY)
 
 # ---[ Root folders
-set(INTEL_ROOT "/opt/intel" CACHE PATH "Folder contains intel libs")
+# set(INTEL_ROOT "/usr/local/intel/" CACHE PATH "Folder contains intel libs")
+set(INTEL_ROOT "/usr/local/intel/")
 find_path(MKL_ROOT include/mkl.h PATHS $ENV{MKLROOT} ${INTEL_ROOT}/mkl
                                    DOC "Folder contains MKL")
 
 # ---[ Find include dir
 find_path(MKL_INCLUDE_DIR mkl.h PATHS ${MKL_ROOT} PATH_SUFFIXES include)
 set(__looked_for MKL_INCLUDE_DIR)
+
 
 # ---[ Find libraries
 if(CMAKE_SIZEOF_VOID_P EQUAL 4)
